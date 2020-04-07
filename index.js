@@ -15,8 +15,23 @@ There are four rules to this discovery. They all concern an object’s bounds. R
 // * When in the global scope, the value of “this” will be the window/console Object;
 
 function sayName(name) {
-    console.log(this);
-    return name;
+  console.log(this);
+  return name;
 }
 
 sayName("D'Artagnan");
+
+// Principle 2: Implicit Binding
+// Whenever a preceding dot calls a function, the object before the dot is this.
+
+const myObj = {
+  greeting: 'Hello',
+  sayHello: function(name) {
+    console.log(`${this.greeting} my name is ${name}`);
+    console.log(this);
+  }
+};
+
+myObj.sayHello('Ryan');
+
+
