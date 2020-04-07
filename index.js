@@ -35,3 +35,25 @@ const myObj = {
 myObj.sayHello('Ryan');
 
 
+// This principle is one of the most commonly used applications of the this keyword. Here is another example: 
+
+const sayNameFunc = obj => {
+  obj.sayName = function() {
+    console.log(`Hello my name is ${this.name}`);
+    console.log(this);
+  };
+};
+const me = { name: 'Ryan' };
+const you = { name: 'Freddy' };
+sayNameFunc(me);
+sayNameFunc(you);
+
+// Invoke Methods on our objects
+me.sayName();
+you.sayName();
+
+// In this previous example, You see that we have a function that receives an object as an argument. Depending on the object being passed in, we get a different context for this, so when we log out the this keyword, we get a different object each time it’s run.
+
+
+
+
