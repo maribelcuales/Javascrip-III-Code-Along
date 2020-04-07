@@ -17,6 +17,6 @@ There are four rules to this discovery. They all concern an object’s bounds. R
 function sayName(name) {
     console.log(this);
     return name;
-  }
-  sayName("D'Artagnan");
-  
+}
+
+sayName("D'Artagnan");
