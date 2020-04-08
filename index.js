@@ -78,5 +78,14 @@ jerry.speak();
 newman.speak();
 
 
+// Principle 4: Explicit binding
+// Whenever we use JavaScript’s call or apply method, this is explicitly defined.
+
+// We can override how we set CordialPerson constructor objects by taking the object-oriented approach. 
+
+// We do so by calling them explicitly with new functions, .call and .apply
+
+jerry.speak.call(newman);
+newman.speak.apply(jerry);
 
 
