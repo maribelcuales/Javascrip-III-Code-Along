@@ -55,5 +55,28 @@ you.sayName();
 // In this previous example, You see that we have a function that receives an object as an argument. Depending on the object being passed in, we get a different context for this, so when we log out the this keyword, we get a different object each time it’s run.
 
 
+// Principle 3: New binding
+// Whenever we use a constructor function, this refers to the specific instance of the object that is created and returned by the constructor function.
+
+// A constructor function is a function that returns an object. It's an object creator. (object-oriented programming)
+
+// The function CordialPerson will create an object for us. When we call the function, we have to use the new keyword.
+
+function CordialPerson(greeter) {
+  this.greeting = 'Hello ';
+  this.greeter = greeter;
+  this.speak = function() {
+    console.log(this.greeting + this.greeter);
+    console.log(this);
+  };
+}
+
+const jerry = new CordialPerson('Newman');
+const newman = new CordialPerson('Jerry');
+
+jerry.speak();
+newman.speak();
+
+
 
 
