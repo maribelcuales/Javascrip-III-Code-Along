@@ -332,6 +332,18 @@ function Fruit(attrs) {
   this.calories = attrs.calories;
 }
 
+// After those properties, our object should have two prototype methods added to it: 
+// calculateCalories - which logs the number of calories in a specified fruit * 200
+// shipped - which takes in a destination and logs out the fruit's name was shipped to destination
+
+Fruit.prototype.shipped = function(destination) {
+  console.log(`Shipping ${this.name} to ${destination}`);
+};
+
+Fruit.prototype.calculateCals = function() {
+  console.log(`Calories in ${this.name} are ${this.calories * 200} `); 
+};
+
 
 
 
