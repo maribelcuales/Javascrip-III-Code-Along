@@ -261,6 +261,30 @@ console.log(fred);
 // console.log(fred.speak());
 
 
+///    PROTOTYPE   ///
+// The prototype is the mechanism by which all JavaScript objects inherit from one another. 
+
+// Think of prototype as an object that objects use to hold onto values that can be passed down to other objects. We use it all the time in inheritance.
+
+// Refactor constructor function Person and remove speak method. Add a new speak property on Person using Person.prototype. 
+
+function Person(attributes) {
+  this.age = attributes.age;
+  this.name = attributes.name;
+  this.homeTown = attributes.homeTown;
+}
+
+Person.prototype.speak = function () {
+  return `Hello, my name is ${this.name}`;
+};
+
+console.log(fred.speak());
+
+// Adding the speak function to the protoype of Person, it now wholly owns speak. Person is able to pass down speak to each instance of Person without creating a new property on any new objects. 
+
+// __proto__ is helpful for us to see inheritance in the browser’s specific JavaScript engine.
+
+
 
 
 
