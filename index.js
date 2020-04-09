@@ -321,6 +321,17 @@ Child.prototype.checkIfChild = function() {
 };
 
 
+////////////////    FOLLOW ALONG   ////////////////    
+
+// Create a Fruit constructor function that can build all instances of fruit. Our constructor should have four properties to create our objects: type, name, isRipe, calories.
+
+function Fruit(attrs) {
+  this.type = attrs.type;
+  this.name = attrs.name;
+  this.isRipe = attrs.isRipe;
+  this.calories = attrs.calories;
+}
+
 
 
 
