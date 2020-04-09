@@ -231,6 +231,35 @@ orderChildren('jill', 'wes', 'jenna'); // ["jill was child #1", "wes was child #
 TIP:  In general, if you do not need the arguments object or you do not need this, or you know that you will not need it in the future, then you can feel free to go ahead and use an arrow function on everything else.
 */
 
+/////////////  PROTOTYPE  //////////////
+
+/* 
+- Understanding the prototype and how we can use constructor functions to create objects are foundational to OOP (Object Oriented Programming) in JavaScript.
+- All objects in JavaScript have a prototype property by default. 
+- This property is used as an object to attach methods and other properties that can be delegated down to other child functions/objects.
+*/
+
+// The constructor function is a way we can build objects.
+
+function Animal(object) {
+  this.name = object.name;
+}
+
+// Animal is capitalized. This is to tell that we're writing a constructor here. 
+
+// To use this function to create objects: 1. We call Person with the new keyword. / 2. Feet it an object literal that will map to those attributes specified in the Person block. 
+
+// When new is called, the constructor function can essentially create a context for a this object. Then what gets returned from that constructor function is that particular this object with the new properties added to it.
+
+const fred = new Person({
+  age: 35,
+  name: 'Fred',
+  homeTown: 'Bedrock'
+});
+
+console.log(fred); 
+// console.log(fred.speak());
+
 
 
 
