@@ -357,6 +357,19 @@ function Banana(bananaAttrs) {
 
 Banana.prototype = Object.create(Fruit.prototype);
 
+// Add a method to our Banana's prototype called checkIfMonkeysLikeIt that will log out if the monkeys like bananas.
+
+Banana.prototype.checkIfMonkeysLikeIt = function() {
+  if(this.doMonkeysLikeIt) {
+    return true;
+  } else {
+    return false;
+  }
+}; 
+
+// NOTE This function will only belong to instances of Banana.. and NOT instances of Fruit;
+
+
 
 
 
