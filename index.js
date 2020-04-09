@@ -195,3 +195,43 @@ subie.summarize()  //"This car is a Subaru in the colour white"
 beemer.summarize()  //"This car is a BMW in the colour blue"
 
 
+[ #4: When you need an arguments Object ]
+
+const orderChildren = () => {
+    const children = Array.from(arguments);
+    return children.map((child, i) => {
+        return `${child} was child #${i + 1}`;
+    })
+    console.log(arguments);
+}
+
+// It doesn’t have to do with the keyword “this,” but we don’t have access to the arguments object when you use an arrow function.
+
+orderChildren('jill', 'wes', 'jenna'); 
+
+// Gets 'ReferenceError, arguments is not defined'.
+
+// This is because arguments is a keyword that we have in our orderChildren that’s going to give us an Array or array-ish value of everything that was passed in.
+
+// However, you do not get the arguments object if you use an arrow function. 
+
+// USE a regular function, which is going to give us the actual content that we need.
+
+(DO THIS!)
+const orderChildren = function() {
+    const children = Array.from(arguments);
+    return children.map((child, i) => {
+        return `${child} was child #${i + 1}`;
+    })
+    console.log(arguments);
+}
+
+orderChildren('jill', 'wes', 'jenna'); // ["jill was child #1", "wes was child #2", "jenna was child #3"]
+
+TIP:  In general, if you do not need the arguments object or you do not need this, or you know that you will not need it in the future, then you can feel free to go ahead and use an arrow function on everything else.
+*/
+
+
+
+
+
