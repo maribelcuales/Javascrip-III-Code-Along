@@ -89,3 +89,17 @@ jerry.speak.call(newman);
 newman.speak.apply(jerry);
 
 
+/////////  Challenge   ///////////
+// https://repl.it/@maribelcuales/Practice-Explicit-binding
+
+const yourObject = {
+  name: 'Dan Frehner',
+  city: 'Salt Lake City',
+  favoriteFood: 'Burritos'
+}
+
+const thingsYouEnjoy = ['Mountain Biking', 'Javascript', 'Snowboarding', 'Rafting', 'Movies', 'Music']
+
+function tellUsAboutYourself(thing1, thing2, thing3){
+  return `Hi! My name is ${this.name}, I live in ${this.city}, and I enjoy ${thing1}, ${thing2}, and ${thing3}. I love to eat ${this.favoriteFood}.`
+}
