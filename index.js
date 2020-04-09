@@ -119,3 +119,46 @@ function tellUsAboutYourFavorites(thing1, thing2, thing3) {
 
 tellUsAboutYourFavorites.call(yourObject, thingsYouEnjoy[3], thingsYouEnjoy[4], thingsYouEnjoy[5]);
 
+
+////// When NOT to use an ARROW FUNCTION  /////
+/*
+https://wesbos.com/arrow-function-no-no/
+ 
+[ #1: click handlers ]
+- if you use an arrow function, the keyword this is not bound to that element. 
+- If we use a regular function, the keyword this will be bound to the element we clicked!
+
+const button = document.querySelector('#pushy');
+button.addEventListener('click', function() {
+    console.log(this);
+    this.classList.toggle('on');
+});
+
+
+[ #2: Object Methods ] 
+- when you need a method to bind to an object.
+- when using an arrow function this is not bound to anything and it just inherits it from the parent scope which in this case is the window.
+
+const person = {
+    points: 23,
+    score: () => {
+        this.points++;
+    }
+}
+
+// If we run person.score(); a few times, we should be at 26 or something. But if I call person, points is still at 23.
+// Because it’s trying to add points to the window! Remember, when using an arrow function this is not bound to anything and it just inherits it from the parent scope which in this case is the window.
+
+(DO THIS!)
+const person = {
+    points: 23,
+    score: function()  {
+        this.points++;
+    }
+}
+
+person.score();
+person.score();
+person.points;  // 25
+
+// It now works because it is a full function and not an arrow function. 
