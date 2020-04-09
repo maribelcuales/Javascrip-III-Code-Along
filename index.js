@@ -162,3 +162,36 @@ person.score();
 person.points;  // 25
 
 // It now works because it is a full function and not an arrow function. 
+
+
+[ #3: 3: Prototype Methods ] 
+- when you need to add a prototype method.
+
+class Car {
+    constructor(make, colour) {
+        this.make = make;
+        this.colour = colour;
+    }
+}
+
+const beemer = new Car('BMW', 'blue');
+const subie = new Car('Subaru', 'white');
+
+(DON'T!)
+Car.prototype.summarize = () => {
+    return `This car is a ${this.make} in the colour ${this.colour}`;  
+};
+
+//this.car is undefined and the colour is undefined --> Because we explicitly need the keyword this so you have to use a regular function
+
+
+(DO THIS!)
+Car.prototype.summarize = function() {
+    return `This car is a ${this.make} in the colour ${this.colour}`;  
+};
+
+subie.summarize()  //"This car is a Subaru in the colour white"
+
+beemer.summarize()  //"This car is a BMW in the colour blue"
+
+
