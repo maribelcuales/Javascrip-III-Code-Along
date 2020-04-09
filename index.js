@@ -285,6 +285,44 @@ console.log(fred.speak());
 // __proto__ is helpful for us to see inheritance in the browser’s specific JavaScript engine.
 
 
+// HOW INHERITANCE WORKS WITH PROTOTYPES
+
+// Here we create a Child constructor. Notice we are using the call() method to bind this to Person.
+
+function Child(childAttributes) {
+  Person.call(this, childAttributes); // binding this to Person
+  this.isChild = childAttributes.isChild; // this will be a special attribute to Child
+}
+
+// The problem with Child is that it doesn’t necessarily know about the Person prototype yet. We have to manually tell Child about Person using Object.create().
+
+Child.prototype = Object.create(Person.prototype);
+
+// We now have linked the Person prototype together with the Child prototype. Eventually, we’ll get this linking for free with the class keyword.
+// Object.create() demonstrates how class keyword works under the hood. 
+
+const pebbles = new Child({
+  age: 3,
+  name: 'Pebbles',
+  homeTown: 'Bedrock',
+});
+
+// We are using the prototype’s inheritance from the Child constructor to access our `Person’ properties.
+
+pebbles.speak()  // Hello, my name is Pebbles
+
+// To illustrate how detached pebbles and fred are: 
+// fred won't have access to the special method below added to the Child prototype 
+
+Child.prototype.checkIfChild = function() {
+  if(this.isChild) {
+    console.log(`My name is ${this.name} and I am a child object`);
+  }
+};
+
+
+
+
 
 
 
