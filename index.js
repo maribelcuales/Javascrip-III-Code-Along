@@ -103,3 +103,9 @@ const thingsYouEnjoy = ['Mountain Biking', 'Javascript', 'Snowboarding', 'Raftin
 function tellUsAboutYourself(thing1, thing2, thing3){
   return `Hi! My name is ${this.name}, I live in ${this.city}, and I enjoy ${thing1}, ${thing2}, and ${thing3}. I love to eat ${this.favoriteFood}.`
 }
+
+
+// Using yourObject and thingsYouEnjoy array, set the context of this on tellUsAboutYourself and call the function.
+
+tellUsAboutYourself.call(yourObject, thingsYouEnjoy[0], thingsYouEnjoy[1], thingsYouEnjoy[2]);
+
