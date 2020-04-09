@@ -344,6 +344,18 @@ Fruit.prototype.calculateCals = function() {
   console.log(`Calories in ${this.name} are ${this.calories * 200} `); 
 };
 
+// Create a child constructor called Banana with a special attribute on it called doMonkeysLikeIt this will be a boolean. 
+// Banana’s prototype needs to be set to Fruit’s prototype.  
+
+function Banana(bananaAttrs) {
+  Fruit.call(this, bananaAttrs);   // binding this to Fruit
+  this.doMonkeysLikeIt = bananaAttrs.doMonkeysLikeIt; // Banana's special attribute
+}
+
+
+// Next, to ‘inherit’ the prototype methods from the Fruit's prototype: 
+
+Banana.prototype = Object.create(Fruit.prototype);
 
 
 
