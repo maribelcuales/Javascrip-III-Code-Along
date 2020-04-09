@@ -109,3 +109,13 @@ function tellUsAboutYourself(thing1, thing2, thing3){
 
 tellUsAboutYourself.call(yourObject, thingsYouEnjoy[0], thingsYouEnjoy[1], thingsYouEnjoy[2]);
 
+
+//If you finish fast add some keys to the yourObject and use them in the funciton. Or create your own function.
+yourObject.faveMovie = 'Avengers: Endgame'; 
+
+function tellUsAboutYourFavorites(thing1, thing2, thing3) {
+  return `Hi! My name is ${this.name}, I live in ${this.city}, and I enjoy ${thing1}, ${thing2}, and ${thing3}. My favorite movie is ${this.faveMovie}.`
+}
+
+tellUsAboutYourFavorites.call(yourObject, thingsYouEnjoy[3], thingsYouEnjoy[4], thingsYouEnjoy[5]);
+
