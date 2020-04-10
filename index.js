@@ -370,6 +370,16 @@ Banana.prototype.checkIfMonkeysLikeIt = function() {
 // NOTE This function will only belong to instances of Banana.. and NOT instances of Fruit;
 
 
+// Create a Kiwi constructor and add a special attribute to it called isFuzzy.
+
+function Kiwi(kiwiAttrs) {
+  Fruit.call(this, kiwiAttrs);
+  this.isFuzzy = kiwiAttrs.isFuzzy; 
+}
+
+Kiwi.prototype = Object.create(Fruit.prototype);
+
+
 
 
 
