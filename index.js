@@ -391,8 +391,21 @@ Kiwi.prototype.checkIfFuzzy = function() {
 };
 
 
+// Finally let’s create some objects from our constructor functions:
 
+const newBanana = new Banana({
+  doMonkeysLikeIt: true,
+  type: 'Tree',
+  name: 'Banana',
+  isRipe: false,
+  calories: 0.1
+}); 
 
-
-
+const newKiwi = new Kiwi({
+  isFuzzy: true,
+  type: 'Tree',
+  name: 'Kiwi',
+  isRipe: false,
+  calories: 0.7
+}); 
 
