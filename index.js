@@ -380,6 +380,18 @@ function Kiwi(kiwiAttrs) {
 Kiwi.prototype = Object.create(Fruit.prototype);
 
 
+// Then add a prototype method to kiwi called checkIfFuzzy
+
+Kiwi.prototype.checkIfFuzzy = function() {
+  if(this.isFuzzy) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+
+
 
 
 
