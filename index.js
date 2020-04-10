@@ -409,3 +409,13 @@ const newKiwi = new Kiwi({
   calories: 0.7
 }); 
 
+// check if things are all linked up properly.
+
+newKiwi.shipped('Alaska');
+newBanana.shipped('Colorado');
+newBanana.checkIfMonkeysLikeIt(); // returns true
+// newKiwi.checkIfMonkeysLikeIt(); // won't work
+newKiwi.checkIfFuzzy(); // returns true
+// newBanana.checkIfFuzzy(); // won't work
+newBanana.calculateCals();
+newKiwi.calculateCals();
