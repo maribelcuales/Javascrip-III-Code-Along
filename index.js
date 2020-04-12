@@ -419,3 +419,25 @@ newKiwi.checkIfFuzzy(); // returns true
 // newBanana.checkIfFuzzy(); // won't work
 newBanana.calculateCals();
 newKiwi.calculateCals();
+
+
+/* ==== Prototypes Challenge
+
+  1. Study the console.log() and object method invocations at the bottom of the page. Update the Animal and Dog constructors so that the logs and methods match the commented result next to them.
+  
+  2. Stretch Challenge: Create a new constructor function called Cat. Add properties and a method unique to a cat.  Make sure cat inherits from Animal so you can use all of the properties and methods found there.
+
+
+You can check your work here:
+
+https://codepen.io/lambdaschool/pen/yxjRJa
+
+*/
+
+
+function Animal(attributes) {
+  this.animalCommonName = attributes.animalCommonName;
+  this.weight = attributes.weight;
+  this.height = attributes.height;
+  this.food = attributes.food;
+}
