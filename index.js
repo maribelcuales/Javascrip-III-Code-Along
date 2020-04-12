@@ -441,3 +441,7 @@ function Animal(attributes) {
   this.height = attributes.height;
   this.food = attributes.food;
 }
+
+Animal.prototype.eat = function() {
+  console.log(`The ${this.animalCommonName} eats ${this.food}`);
+}
