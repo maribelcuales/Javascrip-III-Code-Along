@@ -482,3 +482,6 @@ const beagle = new Dog({
   bark: 'Arf!'
 }); 
 
+console.log(beagle.name); 
+beagle.eat(); 
+beagle.speak(); 
