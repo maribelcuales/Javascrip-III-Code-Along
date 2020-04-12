@@ -453,3 +453,7 @@ function Dog(dogAttributes) {
   this.bark = dogAttributes.bark;
 }
 
+// Set up our __proto__ inheritance to Animal
+Dog.prototype = Object.create(Animal.prototype);
+
+
