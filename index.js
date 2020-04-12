@@ -445,3 +445,11 @@ function Animal(attributes) {
 Animal.prototype.eat = function() {
   console.log(`The ${this.animalCommonName} eats ${this.food}`);
 }
+
+function Dog(dogAttributes) {
+  // Connect the attributes so we can use the this keyword
+  Animal.call(this, dogAttributes);
+  this.name = dogAttributes.name;
+  this.bark = dogAttributes.bark;
+}
+
