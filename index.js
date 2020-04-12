@@ -468,3 +468,5 @@ const dog = new Dog({
   'food': 'meat',
   'bark': 'Woof!'
 });
+
+console.log(dog.animalCommonName); // "dog"
