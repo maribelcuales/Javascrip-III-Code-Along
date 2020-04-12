@@ -471,3 +471,4 @@ const dog = new Dog({
 
 console.log(dog.animalCommonName); // "dog"
 dog.eat(); // "The dog eats meat"
+dog.speak(); // "Dr. Doggo says: Woof!"
