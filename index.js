@@ -460,3 +460,11 @@ Dog.prototype.speak = function() {
   console.log(`${this.name} says: ${this.bark}`);
 }
 
+const dog = new Dog({
+  'name': 'Dr. Doggo',
+  'animalCommonName': "dog",
+  'weight': 40,
+  'height': 12,
+  'food': 'meat',
+  'bark': 'Woof!'
+});
