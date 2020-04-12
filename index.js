@@ -456,4 +456,7 @@ function Dog(dogAttributes) {
 // Set up our __proto__ inheritance to Animal
 Dog.prototype = Object.create(Animal.prototype);
 
+Dog.prototype.speak = function() {
+  console.log(`${this.name} says: ${this.bark}`);
+}
 
